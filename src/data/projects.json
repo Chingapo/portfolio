@@ -52,7 +52,7 @@
       "layer": 3,
       "branch": "spine",
       "status": "case-study",
-      "repoUrl": null,
+      "repoUrl": "https://github.com/Chingapo/CareerBot",
       "liveUrl": null,
       "stack": ["LangGraph", "Anthropic API", "Playwright", "SQLite", "GitHub API", "Streamlit"],
       "connects": [],

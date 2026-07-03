@@ -1,0 +1,31 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #0B0E14;
+  --node-l1: #4FD6BE;
+  --node-l2: #7C8CF8;
+  --node-l3: #FFB454;
+  --edge: #3B4261;
+  --text: #E6E8EF;
+  --text-dim: #8A91A8;
+
+  --font-display: 'Clash Display', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}

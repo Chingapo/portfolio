@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import './index.css'
+import './styles.css'
 
 function SpinningCube() {
   const ref = useRef()
