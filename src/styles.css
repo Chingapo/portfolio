@@ -36,7 +36,7 @@ html, body, #root {
   right: 16px;
   z-index: 200;
   padding: 7px 14px;
-  background: transparent;
+  background: var(--bg);
   border: 1px solid var(--edge);
   border-radius: 6px;
   color: var(--text-dim);

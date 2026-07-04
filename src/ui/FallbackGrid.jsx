@@ -119,6 +119,11 @@ const STYLES = `
     opacity: 0.82;
   }
 
+  .fg-btn:focus-visible {
+    outline: 2px solid var(--node-l1);
+    outline-offset: 2px;
+  }
+
   .fg-btn-primary {
     background: var(--node-l2);
     color: #0B0E14;
@@ -135,6 +140,7 @@ function CardActions({ project }) {
   const { status, liveUrl, repoUrl } = project
 
   if (status === 'case-study') return null
+  if (!liveUrl && !repoUrl) return null
 
   return (
     <div className="fg-actions" onClick={(e) => e.stopPropagation()}>

@@ -203,6 +203,12 @@ const LAYER_COLORS = {
   3: 'var(--node-l3)',
 };
 
+const LAYER_LABELS = {
+  1: 'RAG',
+  2: 'Tool Use',
+  3: 'Multi-Agent',
+};
+
 export default function DetailPanel({ project, onClose }) {
   const layerColor = project ? (LAYER_COLORS[project.layer] || 'var(--text-dim)') : 'var(--text-dim)';
 
@@ -237,7 +243,7 @@ export default function DetailPanel({ project, onClose }) {
                 className="detail-panel__badge"
                 style={{ background: layerColor }}
               >
-                Layer {project.layer}
+                {LAYER_LABELS[project.layer] ?? `Layer ${project.layer}`}
               </span>
             </div>
 
