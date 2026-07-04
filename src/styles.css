@@ -73,6 +73,7 @@ html, body, #root {
   flex-direction: column;
   gap: 6px;
   max-width: 340px;
+  /* pass-through so the 3D scene receives pointer events — add pointer-events: auto to any interactive child */
   pointer-events: none;
 }
 
@@ -134,7 +135,7 @@ html, body, #root {
 /* ── Contact links ── */
 .contact {
   position: fixed;
-  bottom: 24px;
+  bottom: max(24px, env(safe-area-inset-bottom, 24px));
   left: 24px;
   z-index: 100;
   display: flex;
@@ -173,17 +174,21 @@ html, body, #root {
   }
 
   .contact {
-    bottom: 16px;
+    /* sit above the view-toggle row to avoid collision at narrow widths */
+    bottom: max(56px, calc(40px + env(safe-area-inset-bottom, 0px)));
     left: 16px;
     gap: 12px;
   }
 
   .view-toggle {
     top: auto;
-    bottom: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom, 16px));
     right: 16px;
     padding: 10px 16px;
     font-size: 13px;
+    /* prominent CTA on mobile so grid view is discoverable */
+    border-color: var(--node-l1);
+    color: var(--text);
   }
 
   .view-toggle--panel-open {

@@ -33,7 +33,7 @@ export default function Hero() {
       </header>
 
       <footer className="contact" aria-label="Contact links">
-        {meta.links.github && (
+        {meta.links.github && !meta.links.github.startsWith('VERIFY') && (
           <a href={meta.links.github} target="_blank" rel="noopener noreferrer" className="contact__link">
             GitHub
           </a>
