@@ -26,7 +26,7 @@
         "~500-char chunking strategy — sharper vectors than full-document embeddings",
         "Local embedding model chosen for zero training-data privacy exposure"
       ],
-      "story": "Layer 1 of a deliberate capability ladder: retrieval before orchestration. Markdown case study here — what it does, one architecture decision, one thing learned."
+      "story": "First step of a deliberate capability ladder: retrieval before orchestration. Markdown case study here — what it does, one architecture decision, one thing learned."
     },
     {
       "id": "interview-prep-orchestrator",
@@ -61,7 +61,7 @@
         "interrupt/Command(resume) approval gates; two-node split so expensive work never re-fires on resume",
         "SQLite-backed checkpointing; centralized state restoration layer"
       ],
-      "story": "Layer 3: the system that applies architecture lessons from Layers 1–2. Human approval is a first-class graph node, not an afterthought."
+      "story": "The system that applies architecture lessons from RAG and tool use before it. Human approval is a first-class graph node, not an afterthought."
     },
     {
       "id": "claim-verifier",
