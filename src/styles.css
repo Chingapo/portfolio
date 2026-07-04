@@ -29,3 +29,36 @@ html, body, #root {
   color: var(--text);
   font-family: var(--font-body);
 }
+
+.view-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 200;
+  padding: 7px 14px;
+  background: transparent;
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Shift left of the 380px detail panel (380 + 16px gap) */
+.view-toggle--panel-open {
+  right: 396px;
+}
+
+.view-toggle:hover {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.view-toggle:focus-visible {
+  color: var(--text);
+  border-color: var(--node-l1);
+  outline: 2px solid var(--node-l1);
+  outline-offset: 2px;
+}
