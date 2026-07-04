@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useMemo } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { CameraControls } from '@react-three/drei'
 import { computeLayout } from './layout'
@@ -12,15 +12,17 @@ const prefersReducedMotion =
 
 function Graph({ selectedProject, onSelect }) {
   const controlsRef = useRef()
-  const nodes = computeLayout(projectsData.projects)
-  const byId = Object.fromEntries(nodes.map(n => [n.id, n]))
-
-  const edges = []
-  nodes.forEach(node => {
-    node.connects.forEach(targetId => {
-      if (byId[targetId]) edges.push({ from: node, to: byId[targetId] })
+  const nodes = useMemo(() => computeLayout(projectsData.projects), [])
+  const byId = useMemo(() => Object.fromEntries(nodes.map(n => [n.id, n])), [nodes])
+  const edges = useMemo(() => {
+    const result = []
+    nodes.forEach(node => {
+      node.connects.forEach(targetId => {
+        if (byId[targetId]) result.push({ from: node, to: byId[targetId] })
+      })
     })
-  })
+    return result
+  }, [nodes, byId])
 
   useEffect(() => {
     if (!controlsRef.current) return

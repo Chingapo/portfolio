@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Line } from '@react-three/drei'
 import * as THREE from 'three'
@@ -35,7 +35,7 @@ function EdgeParticles({ curve }) {
             position={[init.x, init.y, init.z]}
           >
             <sphereGeometry args={[0.06, 6, 6]} />
-            <meshBasicMaterial color="#3B4261" />
+            <meshBasicMaterial color="#8A91A8" />
           </mesh>
         )
       })}
@@ -47,12 +47,12 @@ export default function Edge({ from, to }) {
   const [fx, fy, fz] = from.position
   const [tx, ty, tz] = to.position
 
-  const curve = new THREE.QuadraticBezierCurve3(
+  const curve = useMemo(() => new THREE.QuadraticBezierCurve3(
     new THREE.Vector3(fx, fy, fz),
     new THREE.Vector3((fx + tx) / 2, (fy + ty) / 2 + 1, (fz + tz) / 2),
     new THREE.Vector3(tx, ty, tz)
-  )
-  const points = curve.getPoints(24)
+  ), [fx, fy, fz, tx, ty, tz])
+  const points = useMemo(() => curve.getPoints(24), [curve])
 
   return (
     <>

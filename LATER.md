@@ -15,4 +15,5 @@ Ideas and features explicitly deferred from v1. Add here freely; never add to co
 
 ## Session overflow (add as sessions run)
 
-<!-- e.g. "Sound design — node click audio cues" -->
+- **Reactive prefers-reduced-motion** — `prefersReducedMotion` is currently a static module-level check. Replace with a `useReducedMotion` hook (drei or react-spring) so toggling the OS setting after page load takes effect without a reload. (`Edge.jsx`, `GraphScene.jsx`)
+- **Cursor flicker between adjacent nodes** — `onPointerOut` resets cursor to `default` before the next node's `onPointerOver` fires; causes a brief flash. Fix with a canvas-level pointer handler or ref-counted approach rather than per-mesh cursor management. (`ProjectNode.jsx`)

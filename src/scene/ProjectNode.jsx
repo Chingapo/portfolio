@@ -3,6 +3,8 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { Html } from '@react-three/drei'
 import * as THREE from 'three'
 
+const _scale = new THREE.Vector3()
+
 const LAYER_COLORS = {
   1: '#4FD6BE',
   2: '#7C8CF8',
@@ -16,10 +18,12 @@ export default function ProjectNode({ project, onSelect }) {
   const [hovered, setHovered] = useState(false)
   const { gl } = useThree()
 
-  useFrame(() => {
+  useFrame((_, delta) => {
     if (!meshRef.current) return
     const target = hovered ? 1.3 : 1.0
-    meshRef.current.scale.lerp(new THREE.Vector3(target, target, target), 0.12)
+    const factor = 1 - Math.pow(1 - 0.12, delta * 60)
+    _scale.setScalar(target)
+    meshRef.current.scale.lerp(_scale, factor)
   })
 
   return (
