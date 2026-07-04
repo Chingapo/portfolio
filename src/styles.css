@@ -62,3 +62,131 @@ html, body, #root {
   outline: 2px solid var(--node-l1);
   outline-offset: 2px;
 }
+
+/* ── Hero overlay ── */
+.hero {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 340px;
+  pointer-events: none;
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero__thesis {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.45;
+}
+
+.hero__stat {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--node-l3);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.hero__stat-value {
+  font-weight: 500;
+}
+
+.hero__stat-label {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+}
+
+.hero__legend {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.hero__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+.hero__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Contact links ── */
+.contact {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 100;
+  display: flex;
+  gap: 16px;
+}
+
+.contact__link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.contact__link:hover,
+.contact__link:focus-visible {
+  color: var(--text);
+}
+
+.contact__link:focus-visible {
+  outline: 2px solid var(--node-l1);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .hero {
+    top: 16px;
+    left: 16px;
+    max-width: calc(100vw - 100px);
+  }
+
+  .hero__name {
+    font-size: 1.1rem;
+  }
+
+  .contact {
+    bottom: 16px;
+    left: 16px;
+    gap: 12px;
+  }
+
+  .view-toggle {
+    top: auto;
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .view-toggle--panel-open {
+    right: 16px;
+  }
+}

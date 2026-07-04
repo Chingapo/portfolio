@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import GraphScene from './scene/GraphScene'
 import DetailPanel from './ui/DetailPanel'
 import FallbackGrid from './ui/FallbackGrid'
+import Hero from './ui/Hero'
 import './styles.css'
 
 function detectWebGL() {
@@ -29,6 +30,8 @@ export default function App() {
 
   return (
     <>
+      <Hero />
+
       <button
         className={`view-toggle${selectedProject ? ' view-toggle--panel-open' : ''}`}
         onClick={() => {
