@@ -7,7 +7,7 @@ const LAYER_COLORS = {
 }
 
 export default function ProjectNode({ project }) {
-  const color = LAYER_COLORS[project.layer]
+  const color = LAYER_COLORS[project.layer] ?? '#ffffff'
   const [x, y, z] = project.position
 
   return (

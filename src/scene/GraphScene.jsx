@@ -27,8 +27,8 @@ function Graph() {
       {nodes.map(node => (
         <ProjectNode key={node.id} project={node} />
       ))}
-      {edges.map((e, i) => (
-        <Edge key={i} from={e.from} to={e.to} />
+      {edges.map((e) => (
+        <Edge key={`${e.from.id}--${e.to.id}`} from={e.from} to={e.to} />
       ))}
       <OrbitControls makeDefault />
     </>
