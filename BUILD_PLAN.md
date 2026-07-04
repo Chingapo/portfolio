@@ -240,7 +240,7 @@ Amber deliberately marks the highest layer AND human-approval markers in the Car
 **Definition of Done:** click any node → panel with correct content and working links; grid view functional. Deployed.
 
 ### Session 5 — Hero + ship (one evening)
-1. `Hero.jsx` overlaid on the scene top-left: name (Clash Display), thesis line, keyStat in mono. Small legend: three colored dots = Layer 1/2/3 — teaches the graph's color language in one glance.
+1. `Hero.jsx` overlaid on the scene top-left: name (Clash Display), thesis line, keyStat in mono. Small legend: three colored dots labeled RAG → Tool Use → Multi-Agent — teaches the graph's color language in one glance.
 2. Contact/links row (GitHub, LinkedIn, X, email) bottom-left.
 3. Meta tags: title, description, OG image (screenshot of the graph), favicon.
 4. Pass over mobile: graph still orbits via touch; grid view offered prominently on small screens.
