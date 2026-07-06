@@ -43,7 +43,7 @@
         "Orchestration loop hand-built: model signals tool_use and stops; my layer executes and returns results",
         "Full message-history management across every API call"
       ],
-      "story": "Built without LangChain on purpose — to understand the stop_reason mechanics frameworks hide."
+      "story": "Built without LangChain on purpose — understanding stop_reason mechanics and message-history management at the wire level before reaching for a framework."
     },
     {
       "id": "careerbot",
@@ -61,7 +61,7 @@
         "interrupt/Command(resume) approval gates; two-node split so expensive work never re-fires on resume",
         "SQLite-backed checkpointing; centralized state restoration layer"
       ],
-      "story": "The system that applies architecture lessons from RAG and tool use before it. Human approval is a first-class graph node, not an afterthought."
+      "story": "I built this to apply what RAG and raw tool use taught me — at scale, with real stakes. Human approval is a first-class graph node, not an afterthought."
     },
     {
       "id": "claim-verifier",
@@ -80,7 +80,7 @@
         "Truth hierarchy enforced architecturally: history is not a parameter to the verdict function",
         "A/B-tested prompting; single-pass beat reasoning-first on both accuracy and speed"
       ],
-      "story": "HackerRank Orchestrate, June 2026. Highest Judge Interview score in the top 8."
+      "story": "HackerRank Orchestrate, June 2026. Finished #14 of 1,773 with the #1 AI Judge evaluation score. The two-stage architecture — model observes, Python decides — kept the verdict function clean and the results auditable."
     },
     {
       "id": "support-triage-agent",
