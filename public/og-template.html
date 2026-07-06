@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>OG Image Template — screenshot at exactly 1200×630</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #0B0E14;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #E6E8EF;
+    display: flex;
+    align-items: stretch;
+  }
+
+  /* ─── Left panel: text ─── */
+  .left {
+    width: 520px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 52px 56px 64px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mark {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 28px;
+  }
+
+  .name {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #E6E8EF;
+    margin-bottom: 6px;
+  }
+
+  .role {
+    font-size: 18px;
+    font-weight: 400;
+    color: #8A91A8;
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: #3B4261;
+    margin-bottom: 24px;
+    border-radius: 1px;
+  }
+
+  .thesis {
+    font-size: 16px;
+    font-weight: 400;
+    color: #C4C9D8;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 360px;
+  }
+
+  .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFB454;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    color: #8A91A8;
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── Right panel: graph ─── */
+  .right {
+    flex: 1;
+    position: relative;
+  }
+
+  .graph-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ─── Layer legend ─── */
+  .legend {
+    position: absolute;
+    bottom: 40px;
+    left: 64px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #8A91A8;
+    letter-spacing: 0.04em;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── Left text column ─── -->
+<div class="left">
+  <!-- Favicon mark (inline SVG) -->
+  <svg class="mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="32" rx="6" fill="#0B0E14"/>
+    <circle cx="16" cy="16" r="13" fill="none" stroke="#4FD6BE" stroke-width="1.5"/>
+    <circle cx="16" cy="16" r="9.5" fill="#7C8CF8"/>
+    <circle cx="16" cy="16" r="5" fill="#FFB454"/>
+  </svg>
+
+  <div class="name">Arjun Pareek</div>
+  <div class="role">AI Agent Architect</div>
+  <div class="divider"></div>
+  <div class="thesis">I architect agentic AI systems&nbsp;— multi-agent pipelines with human-in-the-loop control.</div>
+  <div class="stat">
+    <span class="stat-value">#14 / 1,773</span>
+    <span class="stat-label">HackerRank Orchestrate · June 2026</span>
+  </div>
+
+  <!-- Layer legend -->
+  <div class="legend" style="position:static; margin-top: 32px;">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#4FD6BE;"></div>
+      RAG
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#7C8CF8;"></div>
+      Tool Use
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#FFB454;"></div>
+      Multi-Agent
+    </div>
+  </div>
+</div>
+
+<!-- ─── Right graph column ─── -->
+<div class="right">
+  <svg class="graph-svg" viewBox="0 0 680 630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Glow filters for each layer -->
+      <filter id="glow-teal" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="8" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glow-violet" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="8" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glow-amber" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="10" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <!-- Subtle bg grid texture -->
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1f2e" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+
+    <!-- Background grid -->
+    <rect width="680" height="630" fill="url(#grid)" opacity="0.6"/>
+
+    <!-- ─── Edges (draw under nodes) ─── -->
+    <!-- rag → interview-prep-orchestrator -->
+    <path d="M 120 210 Q 220 250 310 300" stroke="#3B4261" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- interview-prep → careerbot -->
+    <path d="M 310 300 Q 420 280 520 200" stroke="#3B4261" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- support-triage → claim-verifier -->
+    <path d="M 160 450 Q 300 490 520 430" stroke="#3B4261" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- claim-verifier → careerbot -->
+    <path d="M 520 430 Q 560 330 520 200" stroke="#3B4261" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- interview-prep → careerbot (secondary) - just to show interplay -->
+    <path d="M 160 450 Q 230 380 310 300" stroke="#3B4261" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- ─── Nodes ─── -->
+
+    <!-- rag-interview-assistant (L1 teal, spine) -->
+    <circle cx="120" cy="210" r="28" fill="#4FD6BE" opacity="0.15" filter="url(#glow-teal)"/>
+    <circle cx="120" cy="210" r="18" fill="#4FD6BE"/>
+    <text x="120" y="248" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A91A8" letter-spacing="0.02em">RAG Interview</text>
+
+    <!-- support-triage-agent (L1 teal, hackathon) -->
+    <circle cx="160" cy="450" r="24" fill="#4FD6BE" opacity="0.12" filter="url(#glow-teal)"/>
+    <circle cx="160" cy="450" r="15" fill="#4FD6BE"/>
+    <text x="160" y="480" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A91A8" letter-spacing="0.02em">Support Triage</text>
+
+    <!-- interview-prep-orchestrator (L2 violet, spine) -->
+    <circle cx="310" cy="300" r="32" fill="#7C8CF8" opacity="0.15" filter="url(#glow-violet)"/>
+    <circle cx="310" cy="300" r="21" fill="#7C8CF8"/>
+    <text x="310" y="338" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A91A8" letter-spacing="0.02em">Interview Prep</text>
+
+    <!-- careerbot (L3 amber, spine — biggest) -->
+    <circle cx="520" cy="200" r="40" fill="#FFB454" opacity="0.12" filter="url(#glow-amber)"/>
+    <circle cx="520" cy="200" r="26" fill="#FFB454"/>
+    <text x="520" y="242" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A91A8" letter-spacing="0.02em">CareerBot</text>
+
+    <!-- claim-verifier (L3 amber, hackathon) -->
+    <circle cx="520" cy="430" r="32" fill="#FFB454" opacity="0.12" filter="url(#glow-amber)"/>
+    <circle cx="520" cy="430" r="21" fill="#FFB454"/>
+    <text x="520" y="468" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A91A8" letter-spacing="0.02em">Claim Verifier</text>
+
+    <!-- Layer axis labels (faint) -->
+    <text x="80" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#3B4261" letter-spacing="0.08em">L1</text>
+    <text x="310" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#3B4261" letter-spacing="0.08em">L2</text>
+    <text x="520" y="40" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#3B4261" letter-spacing="0.08em">L3</text>
+    <!-- Vertical dashes -->
+    <line x1="80" y1="48" x2="80" y2="590" stroke="#1d2235" stroke-width="1" stroke-dasharray="4 6"/>
+    <line x1="310" y1="48" x2="310" y2="590" stroke="#1d2235" stroke-width="1" stroke-dasharray="4 6"/>
+    <line x1="520" y1="48" x2="520" y2="590" stroke="#1d2235" stroke-width="1" stroke-dasharray="4 6"/>
+  </svg>
+</div>
+
+</body>
+</html>
