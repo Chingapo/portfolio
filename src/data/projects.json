@@ -23,10 +23,10 @@
       "stack": ["ChromaDB", "all-MiniLM-L6-v2", "Anthropic API", "Python"],
       "connects": ["interview-prep-orchestrator"],
       "highlights": [
-        "~500-char chunking strategy — sharper vectors than full-document embeddings",
-        "Local embedding model chosen for zero training-data privacy exposure"
+        "~500-char fixed chunking — effective for the task; sentence-aware splitting handles semantic boundaries better and is what I'd reach for now",
+        "Local embedding model: zero LLM dependency, free to run, quality holds for classification-range retrieval"
       ],
-      "story": "First step of a deliberate capability ladder: retrieval before orchestration. Markdown case study here — what it does, one architecture decision, one thing learned."
+      "story": "Layer 1 of a deliberate stack I built from retrieval up to full orchestration. I used 500-character fixed chunking — it worked for the task, though I'd use sentence-aware splitting now; semantic boundaries matter more than I accounted for at the time. Chose a local sentence transformer to cut LLM dependency and keep it free — for classification-range retrieval, the quality trade-off is minimal."
     },
     {
       "id": "interview-prep-orchestrator",
