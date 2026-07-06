@@ -13,6 +13,17 @@ const STYLES = `
     background: var(--bg);
     overflow-y: auto;
     z-index: 100;
+    transition: padding-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fg-overlay--panel-open {
+    padding-right: 380px;
+  }
+
+  @media (max-width: 600px) {
+    .fg-overlay--panel-open {
+      padding-right: 0;
+    }
   }
 
   .fg-container {
@@ -207,11 +218,11 @@ function ProjectCard({ project, onSelectProject }) {
   )
 }
 
-export default function FallbackGrid({ onSelectProject }) {
+export default function FallbackGrid({ onSelectProject, panelOpen }) {
   const projects = projectsData.projects ?? []
 
   return (
-    <div className="fg-overlay">
+    <div className={`fg-overlay${panelOpen ? ' fg-overlay--panel-open' : ''}`}>
       <style>{STYLES}</style>
       <div className="fg-container">
         <div className="fg-grid">

@@ -44,7 +44,7 @@ export default function App() {
       </button>
 
       {gridView ? (
-        <FallbackGrid onSelectProject={setSelectedProject} />
+        <FallbackGrid onSelectProject={setSelectedProject} panelOpen={!!selectedProject} />
       ) : (
         <GraphScene selectedProject={selectedProject} onSelect={setSelectedProject} />
       )}
