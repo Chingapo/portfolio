@@ -33,8 +33,13 @@ const STYLES = `
   }
 
   @media (max-width: 600px) {
+    .fg-overlay {
+      top: 190px;
+      bottom: 130px;
+    }
+
     .fg-container {
-      padding: 210px 16px 150px;
+      padding: 24px 16px;
     }
   }
 
