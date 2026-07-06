@@ -10,7 +10,7 @@ const prefersReducedMotion =
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function Graph({ selectedProject, onSelect }) {
+function Graph({ selectedProject, onSelect, overviewZ }) {
   const controlsRef = useRef()
   const nodes = useMemo(() => computeLayout(projectsData.projects), [])
   const byId = useMemo(() => Object.fromEntries(nodes.map(n => [n.id, n])), [nodes])
@@ -31,9 +31,9 @@ function Graph({ selectedProject, onSelect }) {
       const [x, y, z] = selectedProject.position
       controlsRef.current.setLookAt(x, y, z + 5, x, y, z, transition)
     } else {
-      controlsRef.current.setLookAt(0, 0, 14, 0, 0, 0, transition)
+      controlsRef.current.setLookAt(0, 0, overviewZ, 0, 0, 0, transition)
     }
-  }, [selectedProject])
+  }, [selectedProject, overviewZ])
 
   return (
     <>
@@ -52,12 +52,15 @@ function Graph({ selectedProject, onSelect }) {
 }
 
 export default function GraphScene({ selectedProject, onSelect }) {
+  // Portrait mobile viewports are narrow in x; layout spans ±5 units so z=14 clips outer nodes.
+  // At fov=50, z=26 gives horizontal half-view ≈5.6 units on a 390px-wide portrait screen.
+  const overviewZ = typeof window !== 'undefined' && window.innerWidth < 600 ? 26 : 14
   return (
     <Canvas
-      camera={{ position: [0, 0, 14], fov: 50 }}
+      camera={{ position: [0, 0, overviewZ], fov: 50 }}
       style={{ background: '#0B0E14' }}
     >
-      <Graph selectedProject={selectedProject} onSelect={onSelect} />
+      <Graph selectedProject={selectedProject} onSelect={onSelect} overviewZ={overviewZ} />
     </Canvas>
   )
 }

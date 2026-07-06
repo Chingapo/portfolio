@@ -67,7 +67,7 @@
       "id": "claim-verifier",
       "title": "Damage Claim Verifier",
       "tagline": "Multi-modal claim verification — #14 of 1,773 (top 0.8%)",
-      "layer": 3,
+      "layer": 2,
       "branch": "hackathon",
       "status": "case-study",
       "repoUrl": null,
