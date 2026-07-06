@@ -34,7 +34,7 @@ const STYLES = `
 
   @media (max-width: 600px) {
     .fg-container {
-      padding: 160px 16px 110px;
+      padding: 210px 16px 150px;
     }
   }
 
