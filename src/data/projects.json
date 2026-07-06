@@ -94,9 +94,10 @@
       "stack": ["ChromaDB", "sentence-transformers", "Claude Haiku", "Python"],
       "connects": ["claim-verifier"],
       "highlights": [
-        "Escalation routing: similarity threshold + LLM self-assessment signal"
+        "Escalation routing: similarity threshold + LLM self-assessment signal to separate clear matches from edge cases",
+        "ChromaDB + Claude Haiku — embedding retrieval for the common case, LLM judgment only where the signal was ambiguous"
       ],
-      "story": "HackerRank Orchestrate, May 2026. The run that set up June's top-1% finish — include the delta between the two as the narrative."
+      "story": "HackerRank Orchestrate, May 2026. Ranked 234 of 1,349. Context limits hit mid-build — unplanned sessions ran long, transcripts cut off, and the architecture suffered for it. That run taught me to scope sessions tightly and plan before touching code. The next build went differently."
     }
   ]
 }
