@@ -151,13 +151,33 @@ const STYLES = `
     color: var(--text-dim);
     border: 1px solid var(--edge);
   }
+
+  .fg-hint {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    opacity: 0.7;
+  }
 `
 
 function CardActions({ project }) {
   const { status, liveUrl, repoUrl } = project
 
-  if (status === 'case-study') return null
-  if (!liveUrl && !repoUrl) return null
+  if (status === 'case-study') {
+    return (
+      <div className="fg-actions">
+        <span className="fg-hint">Case study — click to read</span>
+      </div>
+    )
+  }
+
+  if (!liveUrl && !repoUrl) {
+    return (
+      <div className="fg-actions">
+        <span className="fg-hint">Click to read</span>
+      </div>
+    )
+  }
 
   return (
     <div className="fg-actions" onClick={(e) => e.stopPropagation()}>
