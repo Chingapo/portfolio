@@ -29,7 +29,13 @@ const STYLES = `
   .fg-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 32px;
+    padding: 190px 32px 80px;
+  }
+
+  @media (max-width: 600px) {
+    .fg-container {
+      padding: 160px 16px 110px;
+    }
   }
 
   .fg-grid {

@@ -68,7 +68,7 @@ html, body, #root {
   position: fixed;
   top: 24px;
   left: 24px;
-  z-index: 100;
+  z-index: 110;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -137,7 +137,7 @@ html, body, #root {
   position: fixed;
   bottom: max(24px, env(safe-area-inset-bottom, 24px));
   left: 24px;
-  z-index: 100;
+  z-index: 110;
   display: flex;
   gap: 16px;
 }
@@ -177,7 +177,9 @@ html, body, #root {
     /* sit above the view-toggle row to avoid collision at narrow widths */
     bottom: max(56px, calc(40px + env(safe-area-inset-bottom, 0px)));
     left: 16px;
-    gap: 12px;
+    gap: 8px 12px;
+    flex-wrap: wrap;
+    max-width: calc(100vw - 32px);
   }
 
   .view-toggle {
