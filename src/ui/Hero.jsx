@@ -33,6 +33,9 @@ export default function Hero() {
       </header>
 
       <footer className="contact" aria-label="Contact links">
+        <a href="/resume.pdf" download className="contact__link">
+          The Resume
+        </a>
         {meta.links.github && !meta.links.github.startsWith('VERIFY') && (
           <a href={meta.links.github} target="_blank" rel="noopener noreferrer" className="contact__link">
             GitHub
@@ -53,9 +56,6 @@ export default function Hero() {
             Email
           </a>
         )}
-        <a href="/resume.pdf" download className="contact__link">
-          The Resume
-        </a>
       </footer>
     </>
   )
