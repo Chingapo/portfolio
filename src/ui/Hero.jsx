@@ -53,6 +53,9 @@ export default function Hero() {
             Email
           </a>
         )}
+        <a href="/resume.pdf" download className="contact__link">
+          The Resume
+        </a>
       </footer>
     </>
   )
