@@ -275,10 +275,7 @@ export default function DetailPanel({ project, onClose }) {
 
             {/* Story */}
             {project.story && (
-              <div>
-                <p className="detail-panel__section-label">Story</p>
-                <p className="detail-panel__story">{project.story}</p>
-              </div>
+              <p className="detail-panel__story">{project.story}</p>
             )}
 
             {/* Action buttons — status-gated */}
