@@ -41,7 +41,7 @@ function Graph({ selectedProject, onSelect, overviewZ }) {
       <directionalLight position={[10, 10, 5]} intensity={1} />
       <directionalLight position={[-10, -5, -5]} intensity={0.3} />
       {nodes.map(node => (
-        <ProjectNode key={node.id} project={node} onSelect={onSelect} />
+        <ProjectNode key={node.id} project={node} onSelect={onSelect} selectedProject={selectedProject} />
       ))}
       {edges.map((e) => (
         <Edge key={`${e.from.id}--${e.to.id}`} from={e.from} to={e.to} />

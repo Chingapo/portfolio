@@ -11,7 +11,7 @@ const LAYER_COLORS = {
   3: '#FFB454',
 }
 
-export default function ProjectNode({ project, onSelect }) {
+export default function ProjectNode({ project, onSelect, selectedProject }) {
   const color = LAYER_COLORS[project.layer] ?? '#ffffff'
   const [x, y, z] = project.position
   const meshRef = useRef()
@@ -49,7 +49,8 @@ export default function ProjectNode({ project, onSelect }) {
           fontSize: '11px',
           whiteSpace: 'nowrap',
           userSelect: 'none',
-          transition: 'color 0.15s',
+          transition: 'color 0.15s, opacity 0.2s',
+          opacity: selectedProject && selectedProject.id !== project.id ? 0 : 1,
         }}>
           {project.title}
         </span>
