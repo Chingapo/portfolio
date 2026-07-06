@@ -97,7 +97,7 @@
         "Escalation routing: similarity threshold + LLM self-assessment signal to separate clear matches from edge cases",
         "ChromaDB + Claude Haiku — embedding retrieval for the common case, LLM judgment only where the signal was ambiguous"
       ],
-      "story": "HackerRank Orchestrate, May 2026. Ranked 234 of 1,349. Context limits hit mid-build — unplanned sessions ran long, transcripts cut off, and the architecture suffered for it. That run taught me to scope sessions tightly and plan before touching code. The next build went differently."
+      "story": "HackerRank Orchestrate, May 2026. Ranked 234 of 1,349. Built an escalation router combining similarity thresholds with LLM self-assessment — model judges its own confidence before handing off to a human. The session discipline wasn't there yet; context limits cut the build short and it showed. The next build went differently."
     }
   ]
 }
